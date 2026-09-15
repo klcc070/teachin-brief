@@ -1,0 +1,6 @@
+node_modules/
+data/teachin/state.json
+data/teachin/brief.md
+data/teachin/mail.local.json
+data/teachin/update.log
+data/teachin/config.local.json

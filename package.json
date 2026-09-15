@@ -1,0 +1,14 @@
+{
+  "name": "teachin-brief",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "校园招聘宣讲会每日增量简报(增量抓取/关键词筛选/邮件提醒)",
+  "scripts": {
+    "update": "node scripts/teachin/update.mjs",
+    "mail": "node scripts/teachin/mail.mjs --test"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.10"
+  }
+}

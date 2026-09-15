@@ -1,0 +1,11 @@
+{
+  "_说明": "复制本文件为 mail.local.json 并填写真实值(mail.local.json 已被 .gitignore 排除,不会入库)。QQ邮箱:设置→账户→开启SMTP服务→生成授权码,pass 填授权码不是QQ密码;163邮箱 host 用 smtp.163.com。",
+  "enabled": true,
+  "smtpHost": "smtp.qq.com",
+  "smtpPort": 465,
+  "secure": true,
+  "user": "你的发件邮箱@qq.com",
+  "pass": "SMTP授权码",
+  "from": "你的发件邮箱@qq.com",
+  "to": "收件邮箱@example.com"
+}
