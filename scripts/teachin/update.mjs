@@ -200,7 +200,19 @@ async function main() {
   }
 }
 
-main().catch((e) => {
+// 站点抖动容错:整体重试 3 次,间隔 60s(宕机则放弃,明日自动任务再试)
+async function mainWithRetry() {
+  for (let attempt = 1; ; attempt++) {
+    try { return await main(); }
+    catch (e) {
+      if (attempt >= 3 || !/fetch|network|ECONN|timeout/i.test(String(e && e.message))) throw e;
+      console.error('[update] 第 ' + attempt + ' 次失败(' + e.message + '),60s 后重试…');
+      await new Promise(r => setTimeout(r, 60000));
+    }
+  }
+}
+
+mainWithRetry().catch((e) => {
   console.error('[update] 失败:', e.message);
   process.exit(1);
 });
